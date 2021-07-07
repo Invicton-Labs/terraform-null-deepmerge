@@ -41,10 +41,11 @@ locals {
         field.path[0] => {final_val = field.value, sub_val = lookup(local.m1, field.key, null)}[field.is_final ? "final_val" : "sub_val"]
     }
 }
-
+            
 // Check to make sure the highest level module has no remaining values that weren't recursed through
 module "asset_sufficient_levels" {
-    source = "../assert"
+    source  = "Invicton-Labs/assertion/null"
+    version = "0.1.1"
     error_message = "Deepmerge has recursed to insufficient depth (${length(local.modules)} levels is not enough)"
     condition = concat([
         for i in range(0, length(var.maps)):
