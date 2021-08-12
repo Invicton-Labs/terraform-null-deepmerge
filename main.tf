@@ -1,9 +1,11 @@
 locals {
+  // If no maps are passed in, we have to provide a default empty map for this module to work with
+  input_maps = concat(var.maps, length(var.maps) > 0 ? [] : [{}])
   // Find the greatest depth through the maps
-  greatest_depth = max(concat([
+  greatest_depth = max(concat([1], [
     for mod in local.modules :
     concat([
-      for i in range(0, length(var.maps)) :
+      for i in range(0, length(local.input_maps)) :
       [
         for f in mod[i].fields :
         length(f["path"])
@@ -13,7 +15,7 @@ locals {
 
   // For each input map, convert it to a single-level map with a unique key for every nested value
   fields_json = [
-    for i in range(0, length(var.maps)) :
+    for i in range(0, length(local.input_maps)) :
     merge([
       for j in range(0, local.greatest_depth) :
       {
@@ -48,7 +50,7 @@ module "asset_sufficient_levels" {
   version       = "0.2.1"
   error_message = "Deepmerge has recursed to insufficient depth (${length(local.modules)} levels is not enough)"
   condition = concat([
-    for i in range(0, length(var.maps)) :
+    for i in range(0, length(local.input_maps)) :
     local.modules[length(local.modules) - 1][i].remaining
   ]...) == []
 }

@@ -1,13 +1,13 @@
 locals {
   mod0toparse = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     [{
       path  = [],
-      value = var.maps[map_idx]
+      value = local.input_maps[map_idx]
     }]
   ]
   mod0 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod0toparse[map_idx] :
@@ -35,7 +35,7 @@ locals {
     }
   ]
   mod1 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod0[map_idx].remaining :
@@ -63,7 +63,7 @@ locals {
     }
   ]
   mod2 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod1[map_idx].remaining :
@@ -91,7 +91,7 @@ locals {
     }
   ]
   mod3 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod2[map_idx].remaining :
@@ -119,7 +119,7 @@ locals {
     }
   ]
   mod4 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod3[map_idx].remaining :
@@ -147,7 +147,7 @@ locals {
     }
   ]
   mod5 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod4[map_idx].remaining :
@@ -175,7 +175,7 @@ locals {
     }
   ]
   mod6 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod5[map_idx].remaining :
@@ -203,7 +203,7 @@ locals {
     }
   ]
   mod7 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod6[map_idx].remaining :
@@ -231,7 +231,7 @@ locals {
     }
   ]
   mod8 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod7[map_idx].remaining :
@@ -259,7 +259,7 @@ locals {
     }
   ]
   mod9 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod8[map_idx].remaining :
@@ -287,7 +287,7 @@ locals {
     }
   ]
   mod10 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod9[map_idx].remaining :
@@ -315,7 +315,7 @@ locals {
     }
   ]
   mod11 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod10[map_idx].remaining :
@@ -343,7 +343,7 @@ locals {
     }
   ]
   mod12 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod11[map_idx].remaining :
@@ -371,7 +371,7 @@ locals {
     }
   ]
   mod13 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod12[map_idx].remaining :
@@ -399,7 +399,7 @@ locals {
     }
   ]
   mod14 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod13[map_idx].remaining :
@@ -427,7 +427,7 @@ locals {
     }
   ]
   mod15 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod14[map_idx].remaining :
@@ -455,7 +455,7 @@ locals {
     }
   ]
   mod16 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod15[map_idx].remaining :
@@ -483,7 +483,7 @@ locals {
     }
   ]
   mod17 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod16[map_idx].remaining :
@@ -511,7 +511,7 @@ locals {
     }
   ]
   mod18 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod17[map_idx].remaining :
@@ -539,7 +539,7 @@ locals {
     }
   ]
   mod19 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod18[map_idx].remaining :
@@ -567,7 +567,7 @@ locals {
     }
   ]
   mod20 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod19[map_idx].remaining :
@@ -595,7 +595,7 @@ locals {
     }
   ]
   mod21 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod20[map_idx].remaining :
@@ -623,7 +623,7 @@ locals {
     }
   ]
   mod22 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod21[map_idx].remaining :
@@ -651,7 +651,7 @@ locals {
     }
   ]
   mod23 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod22[map_idx].remaining :
@@ -679,7 +679,7 @@ locals {
     }
   ]
   mod24 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod23[map_idx].remaining :
@@ -707,7 +707,7 @@ locals {
     }
   ]
   mod25 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod24[map_idx].remaining :
@@ -735,7 +735,7 @@ locals {
     }
   ]
   mod26 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod25[map_idx].remaining :
@@ -763,7 +763,7 @@ locals {
     }
   ]
   mod27 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod26[map_idx].remaining :
@@ -791,7 +791,7 @@ locals {
     }
   ]
   mod28 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod27[map_idx].remaining :
@@ -819,7 +819,7 @@ locals {
     }
   ]
   mod29 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod28[map_idx].remaining :
@@ -847,7 +847,7 @@ locals {
     }
   ]
   mod30 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod29[map_idx].remaining :
@@ -875,7 +875,7 @@ locals {
     }
   ]
   mod31 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod30[map_idx].remaining :
@@ -903,7 +903,7 @@ locals {
     }
   ]
   mod32 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod31[map_idx].remaining :
@@ -931,7 +931,7 @@ locals {
     }
   ]
   mod33 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod32[map_idx].remaining :
@@ -959,7 +959,7 @@ locals {
     }
   ]
   mod34 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod33[map_idx].remaining :
@@ -987,7 +987,7 @@ locals {
     }
   ]
   mod35 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod34[map_idx].remaining :
@@ -1015,7 +1015,7 @@ locals {
     }
   ]
   mod36 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod35[map_idx].remaining :
@@ -1043,7 +1043,7 @@ locals {
     }
   ]
   mod37 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod36[map_idx].remaining :
@@ -1071,7 +1071,7 @@ locals {
     }
   ]
   mod38 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod37[map_idx].remaining :
@@ -1099,7 +1099,7 @@ locals {
     }
   ]
   mod39 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod38[map_idx].remaining :
@@ -1127,7 +1127,7 @@ locals {
     }
   ]
   mod40 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod39[map_idx].remaining :
@@ -1155,7 +1155,7 @@ locals {
     }
   ]
   mod41 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod40[map_idx].remaining :
@@ -1183,7 +1183,7 @@ locals {
     }
   ]
   mod42 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod41[map_idx].remaining :
@@ -1211,7 +1211,7 @@ locals {
     }
   ]
   mod43 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod42[map_idx].remaining :
@@ -1239,7 +1239,7 @@ locals {
     }
   ]
   mod44 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod43[map_idx].remaining :
@@ -1267,7 +1267,7 @@ locals {
     }
   ]
   mod45 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod44[map_idx].remaining :
@@ -1295,7 +1295,7 @@ locals {
     }
   ]
   mod46 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod45[map_idx].remaining :
@@ -1323,7 +1323,7 @@ locals {
     }
   ]
   mod47 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod46[map_idx].remaining :
@@ -1351,7 +1351,7 @@ locals {
     }
   ]
   mod48 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod47[map_idx].remaining :
@@ -1379,7 +1379,7 @@ locals {
     }
   ]
   mod49 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod48[map_idx].remaining :
@@ -1407,7 +1407,7 @@ locals {
     }
   ]
   mod50 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod49[map_idx].remaining :
@@ -1435,7 +1435,7 @@ locals {
     }
   ]
   mod51 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod50[map_idx].remaining :
@@ -1463,7 +1463,7 @@ locals {
     }
   ]
   mod52 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod51[map_idx].remaining :
@@ -1491,7 +1491,7 @@ locals {
     }
   ]
   mod53 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod52[map_idx].remaining :
@@ -1519,7 +1519,7 @@ locals {
     }
   ]
   mod54 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod53[map_idx].remaining :
@@ -1547,7 +1547,7 @@ locals {
     }
   ]
   mod55 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod54[map_idx].remaining :
@@ -1575,7 +1575,7 @@ locals {
     }
   ]
   mod56 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod55[map_idx].remaining :
@@ -1603,7 +1603,7 @@ locals {
     }
   ]
   mod57 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod56[map_idx].remaining :
@@ -1631,7 +1631,7 @@ locals {
     }
   ]
   mod58 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod57[map_idx].remaining :
@@ -1659,7 +1659,7 @@ locals {
     }
   ]
   mod59 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod58[map_idx].remaining :
@@ -1687,7 +1687,7 @@ locals {
     }
   ]
   mod60 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod59[map_idx].remaining :
@@ -1715,7 +1715,7 @@ locals {
     }
   ]
   mod61 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod60[map_idx].remaining :
@@ -1743,7 +1743,7 @@ locals {
     }
   ]
   mod62 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod61[map_idx].remaining :
@@ -1771,7 +1771,7 @@ locals {
     }
   ]
   mod63 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod62[map_idx].remaining :
@@ -1799,7 +1799,7 @@ locals {
     }
   ]
   mod64 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod63[map_idx].remaining :
@@ -1827,7 +1827,7 @@ locals {
     }
   ]
   mod65 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod64[map_idx].remaining :
@@ -1855,7 +1855,7 @@ locals {
     }
   ]
   mod66 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod65[map_idx].remaining :
@@ -1883,7 +1883,7 @@ locals {
     }
   ]
   mod67 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod66[map_idx].remaining :
@@ -1911,7 +1911,7 @@ locals {
     }
   ]
   mod68 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod67[map_idx].remaining :
@@ -1939,7 +1939,7 @@ locals {
     }
   ]
   mod69 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod68[map_idx].remaining :
@@ -1967,7 +1967,7 @@ locals {
     }
   ]
   mod70 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod69[map_idx].remaining :
@@ -1995,7 +1995,7 @@ locals {
     }
   ]
   mod71 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod70[map_idx].remaining :
@@ -2023,7 +2023,7 @@ locals {
     }
   ]
   mod72 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod71[map_idx].remaining :
@@ -2051,7 +2051,7 @@ locals {
     }
   ]
   mod73 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod72[map_idx].remaining :
@@ -2079,7 +2079,7 @@ locals {
     }
   ]
   mod74 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod73[map_idx].remaining :
@@ -2107,7 +2107,7 @@ locals {
     }
   ]
   mod75 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod74[map_idx].remaining :
@@ -2135,7 +2135,7 @@ locals {
     }
   ]
   mod76 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod75[map_idx].remaining :
@@ -2163,7 +2163,7 @@ locals {
     }
   ]
   mod77 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod76[map_idx].remaining :
@@ -2191,7 +2191,7 @@ locals {
     }
   ]
   mod78 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod77[map_idx].remaining :
@@ -2219,7 +2219,7 @@ locals {
     }
   ]
   mod79 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod78[map_idx].remaining :
@@ -2247,7 +2247,7 @@ locals {
     }
   ]
   mod80 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod79[map_idx].remaining :
@@ -2275,7 +2275,7 @@ locals {
     }
   ]
   mod81 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod80[map_idx].remaining :
@@ -2303,7 +2303,7 @@ locals {
     }
   ]
   mod82 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod81[map_idx].remaining :
@@ -2331,7 +2331,7 @@ locals {
     }
   ]
   mod83 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod82[map_idx].remaining :
@@ -2359,7 +2359,7 @@ locals {
     }
   ]
   mod84 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod83[map_idx].remaining :
@@ -2387,7 +2387,7 @@ locals {
     }
   ]
   mod85 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod84[map_idx].remaining :
@@ -2415,7 +2415,7 @@ locals {
     }
   ]
   mod86 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod85[map_idx].remaining :
@@ -2443,7 +2443,7 @@ locals {
     }
   ]
   mod87 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod86[map_idx].remaining :
@@ -2471,7 +2471,7 @@ locals {
     }
   ]
   mod88 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod87[map_idx].remaining :
@@ -2499,7 +2499,7 @@ locals {
     }
   ]
   mod89 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod88[map_idx].remaining :
@@ -2527,7 +2527,7 @@ locals {
     }
   ]
   mod90 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod89[map_idx].remaining :
@@ -2555,7 +2555,7 @@ locals {
     }
   ]
   mod91 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod90[map_idx].remaining :
@@ -2583,7 +2583,7 @@ locals {
     }
   ]
   mod92 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod91[map_idx].remaining :
@@ -2611,7 +2611,7 @@ locals {
     }
   ]
   mod93 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod92[map_idx].remaining :
@@ -2639,7 +2639,7 @@ locals {
     }
   ]
   mod94 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod93[map_idx].remaining :
@@ -2667,7 +2667,7 @@ locals {
     }
   ]
   mod95 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod94[map_idx].remaining :
@@ -2695,7 +2695,7 @@ locals {
     }
   ]
   mod96 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod95[map_idx].remaining :
@@ -2723,7 +2723,7 @@ locals {
     }
   ]
   mod97 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod96[map_idx].remaining :
@@ -2751,7 +2751,7 @@ locals {
     }
   ]
   mod98 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod97[map_idx].remaining :
@@ -2779,7 +2779,7 @@ locals {
     }
   ]
   mod99 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod98[map_idx].remaining :
@@ -2807,7 +2807,7 @@ locals {
     }
   ]
   mod100 = [
-    for map_idx in range(0, length(var.maps)) :
+    for map_idx in range(0, length(local.input_maps)) :
     {
       fields = concat([], [
         for item in local.mod99[map_idx].remaining :
