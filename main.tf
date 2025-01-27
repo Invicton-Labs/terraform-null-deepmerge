@@ -25,7 +25,7 @@ locals {
     ]...)
   ]
 
-  // Merge the maps using the standard merge function, which will cause higher-precedence map values to overwrite lower-precedence values
+  // Merge the maps using the standard merge function, which will cause higher-precedence map values to overwrite lower-precedence map values
   merged_map = merge(local.fields_json...)
 
   // Split the merged fields into segments for each depth
@@ -47,15 +47,16 @@ locals {
 // Check to make sure the highest level module has no remaining values that weren't recursed through
 module "asset_sufficient_levels" {
   source        = "Invicton-Labs/assertion/null"
-  version       = "0.2.1"
+  version       = "~>0.2.7"
   error_message = "Deepmerge has recursed to insufficient depth (${length(local.modules)} levels is not enough)"
-  condition = concat([
+  condition = length([
     for i in range(0, length(local.input_maps)) :
-    local.modules[length(local.modules) - 1][i].remaining
-  ]...) == []
+    true
+    if length(local.modules[length(local.modules) - 1][i].remaining) > 0
+  ]) == 0
 }
 
-// Use this  from a DIFFERENT terraform project to generate a new file with a different max depth
+// Use this from a DIFFERENT terraform project to generate a new file with a different max depth
 /*
 resource "local_file" "depth" {
     content     = templatefile("${path.module}/../deepmerge/depth.tmpl", {max_depth = 100})
