@@ -1,4 +1,4 @@
 output "merged" {
   description = "The merged map."
-  value       = local.m0
+  value       = module.asset_sufficient_levels.checked ? local.m0 : null
 }
