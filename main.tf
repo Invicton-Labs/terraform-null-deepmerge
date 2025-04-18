@@ -59,7 +59,7 @@ module "asset_sufficient_levels" {
 // Use this from a DIFFERENT terraform project to generate a new file with a different max depth
 /*
 resource "local_file" "depth" {
-  content  = templatefile("/Users/arrayqueue/dev/GitHub/terraform-null-deepmerge/depth.tmpl", { max_depth = 100 })
-  filename = "/Users/arrayqueue/dev/GitHub/terraform-null-deepmerge/depth.tf-gen"
+  content  = templatefile("${path.module}/../deepmerge/depth.tmpl", {max_depth = 100})
+  filename = "${path.module}/../deepmerge/depth.tf"
 }
 */
