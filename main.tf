@@ -42,7 +42,7 @@ locals {
     for field in local.merged_fields_by_depth[0] :
     field.path[0] => {
       final_val = field.value,
-      sub_val = lookup(local.m1, field.key, null)
+      sub_val   = lookup(local.m1, field.key, null)
     }[field.is_final ? "final_val" : "sub_val"]
   }
 }
