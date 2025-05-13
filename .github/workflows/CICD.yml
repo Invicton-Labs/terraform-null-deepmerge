@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Generate Matrix
         id: matrix
-        uses: Invicton-Labs/terraform-module-testing/matrix@v0.3.0
+        uses: Invicton-Labs/terraform-module-testing/matrix@v0.4.0
         with:
           minimum_tf_version: '1.10.3'
           additional_runners: 'macos-13, windows-2019'
@@ -29,7 +29,7 @@ jobs:
     steps:
       - name: Initialize
         id: init
-        uses: Invicton-Labs/terraform-module-testing/initialize@v0.3.0
+        uses: Invicton-Labs/terraform-module-testing/initialize@v0.4.0
         with:
           tf_path: .
       - name: Test
