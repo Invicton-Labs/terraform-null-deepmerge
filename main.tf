@@ -40,7 +40,10 @@ locals {
   // The lowest level of the re-assembled map is special and not part of the auto-generated depth.tf file
   m0 = {
     for field in local.merged_fields_by_depth[0] :
-    field.path[0] => { final_val = field.value, sub_val = lookup(local.m1, field.key, null) }[field.is_final ? "final_val" : "sub_val"]
+    field.path[0] => {
+      final_val = field.value,
+      sub_val   = lookup(local.m1, field.key, null)
+    }[field.is_final ? "final_val" : "sub_val"]
   }
 }
 
@@ -59,7 +62,7 @@ module "asset_sufficient_levels" {
 // Use this from a DIFFERENT terraform project to generate a new file with a different max depth
 /*
 resource "local_file" "depth" {
-    content     = templatefile("${path.module}/../deepmerge/depth.tmpl", {max_depth = 100})
-    filename = "${path.module}/../deepmerge/depth.tf"
+  content  = templatefile("${path.module}/../deepmerge/depth.tmpl", {max_depth = 100})
+  filename = "${path.module}/../deepmerge/depth.tf"
 }
 */
